@@ -1,6 +1,6 @@
 # gofinances | Ignite - React-Native
  O projeto **gofinances** é um aplicativo mobile para cadastrar gastos e faturamentos recebidos além de realizar uma análise básica sobre os gastos do usuário e um resumo.
-<h2 align="center">myskills</h2>
+<h2 align="center">gofinances</h2>
 
 ___
 
@@ -39,10 +39,14 @@ O 2º projeto do bootcamp Ignite na trilha react-native, é o 1º projeto com o 
 Esse projeto tem por objetivo por em introduzir os conceitos básicos de React Native no desenvolvimento mobile no 2º capítulo do curso **Ignite** de **React Native**. 
 
 Assim, nesse projeto criamos a lsitagem geral de gastos e faturamentos, além do cadastro e do gráfico sobre a rentabilidade do usuário.
-___
 
 * **Gráfico de gastos**:
-  
+___
+## 🎨  Design
+[<h2 align="center">GoFinances</h2>](https://www.figma.com/file/gB04KGLDsvKN1SmV9Y9JQy/GoFinances-Ignite-(Copy))
+<img src="https://i.imgur.com/JHJCXRe.png" width="870">
+
+___
 ## :seedling: Requisitos Mínimos
 
 - Node.js 
