@@ -7,7 +7,7 @@ ___
 <h3 align="center">
   <a href="#information_source-sobre">Sobre</a>&nbsp;|&nbsp;
   <a href="#interrobang-motivo">Motivo</a>&nbsp;|&nbsp;
-  <a href="# 🎨  -design">Design</a>&nbsp;|&nbsp;
+  <a href="#art-design">Design</a>&nbsp;|&nbsp;
   <a href="#seedling-requisitos-mínimos">Requisitos</a>&nbsp;|&nbsp;
   <a href="#rocket-tecnologias-utilizadas">Tecnologias</a>&nbsp;|&nbsp;
   <a href="#package-como-baixar-e-executar-o-projeto">Baixar e Executar</a>&nbsp;
@@ -43,7 +43,7 @@ Assim, nesse projeto criamos a lsitagem geral de gastos e faturamentos, além do
 
 * **Gráfico de gastos**:
 ___
-## 🎨  Design
+## :art: Design
 [<h2 align="center">GoFinances - Figma</h2>](https://www.figma.com/file/gB04KGLDsvKN1SmV9Y9JQy/GoFinances-Ignite-(Copy))
 <img src="https://i.imgur.com/JHJCXRe.png" width="870">
 
