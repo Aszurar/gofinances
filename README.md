@@ -43,7 +43,7 @@ Assim, nesse projeto criamos a lsitagem geral de gastos e faturamentos, além do
 * **Gráfico de gastos**:
 ___
 ## 🎨  Design
-[<h2 align="center">GoFinances</h2>](https://www.figma.com/file/gB04KGLDsvKN1SmV9Y9JQy/GoFinances-Ignite-(Copy))
+[<h2 align="center">GoFinances - Figma</h2>](https://www.figma.com/file/gB04KGLDsvKN1SmV9Y9JQy/GoFinances-Ignite-(Copy))
 <img src="https://i.imgur.com/JHJCXRe.png" width="870">
 
 ___
