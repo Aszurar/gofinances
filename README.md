@@ -22,24 +22,27 @@ ___
 
 ## :information_source: Sobre
 
-O projeto **myskills** é o 1º projeto do bootcamp **Ignite da trilha React Native da Rocketseat** em que treinamos conceitos básicos de React Native como **componentes e suas propriedades, variável Estado, formas de manipulações de variável Estado como filter, findIndex, map, estilização com StyleSheet, componentização e formas de passar dados/funções para componentes criados.**
-Esse projeto é aprendido durante as aulas do 1º capítulo do Ignite da trilha React Native.
+O 2º projeto do bootcamp Ignite na trilha react-native, é o 1º projeto com o auxílio e configurações do Expo(_Barer workflow_), além disso é explicado mais sobre componentes do react-native como a **Flatlist, responsividade, Async-Storage, Axios, Login Social com o OAuth(Google e IOS), e sobre navegação em aba e em pilha além de suas configurações**
 
-* Página Inicial:
+* **Página Inicial**:
   
-  <img src="https://i.imgur.com/4ZPpDOs.jpg" width="400"> 
+  <img src="" width="400"> 
 
-* Adição de habilidades:
+* **Cadastro de gastos**:
 
-  <img src="https://i.imgur.com/6046hZF.jpg" width="300"><img src="https://i.imgur.com/2acsDN7.jpg" width="300"><img src="https://i.imgur.com/SJtPacm.jpg" width="300"> 
+  <img src="" width="300"><img src="" width="300"><img src="" width="300"> 
 
 
  
 ## :interrobang: Motivo
 
-Esse projeto tem por objetivo por em introduzir os conceitos básicos de React Native no desenvolvimento mobile no 1º capítulo do curso **Ignite** de **React Native**. 
-Assim, nesse projeto criamos a adição e remoção de dados na memória temporária do aplicativo por meio da manipulação de variáveis Estado e do uso de componentes básicos do React-Native.
+Esse projeto tem por objetivo por em introduzir os conceitos básicos de React Native no desenvolvimento mobile no 2º capítulo do curso **Ignite** de **React Native**. 
+
+Assim, nesse projeto criamos a lsitagem geral de gastos e faturamentos, além do cadastro e do gráfico sobre a rentabilidade do usuário.
 ___
+
+* **Gráfico de gastos**:
+  
 ## :seedling: Requisitos Mínimos
 
 - Node.js 
@@ -48,23 +51,30 @@ ___
 - React-Native
 - Android Studio
 - Celular(Opcional)
+- Expo(desktop) 
+  - Expo Go(Mobile) opcional.
 
 ___
-## :rocket: Tecnologias Utilizadas 
+## :rocket: Principais Tecnologias Utilizadas 
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias
-- [Android Studio](https://developer.android.com/studio)
-- [NodeJS](https://nodejs.org/en/)
 - [Yarn](https://classic.yarnpkg.com/blog/2017/05/12/introducing-yarn/)
+- [NodeJS](https://nodejs.org/en/)
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Android Studio](https://developer.android.com/studio)
 - [React](https://pt-br.reactjs.org/)
 - [React-Native](https://reactnative.dev/)
-- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [React Navigation](https://reactnavigation.org/)
+- [Expo](https://expo.dev/)
+- [Autenticação Expo](https://docs.expo.dev/guides/authentication/)
+- [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/usage/)
+- [Victory-Native](https://formidable.com/open-source/victory/docs/native/)
 ___
 ## :package: Como baixar e executar o projeto
 
   - Clonar o projeto:
     ```bash
-     git clone https://github.com/Aszurar/myskills.git
+     git clone https://github.com/Aszurar/gofinances.git
     ```
   - É necessário a instalação do yarn de acordo com seu sistema operacional, para isso veja como no site do [Yarn](https://classic.yarnpkg.com/blog/2017/05/12/introducing-yarn/)
   - Instalação das dependências:
@@ -72,17 +82,17 @@ ___
     ```bash
       yarn
     ```
- - É necessário a instalação do emulador [Android Studios](https://developer.android.com/studio) e das tecnologias requesitadas acima no **:seedling: Requisitos Mínimos**
+ - É necessário a instalação do emulador [Android Studios](https://developer.android.com/studio) e das tecnologias requesitadas acima no:seedling:   <a href="#seedling-requisitos-mínimos">**Requisitos**</a>
  - Também é necessário a instalação/configuração de outras tecnologias, para isso siga os passos indicados nessa página de acordo com seu sistema operacional: [Executando uma Aplicação React-Native emulando Windows/Linux/MacOS ou direto no dispositivo mobile Android/IOS](https://react-native.rocketseat.dev/android/linux)
+ - É necessário a instalação do [Expo](https://expo.dev/)
  - Execução - Abra a pasta do projeto com alguma IDE(Vscode) ou simplesmente abra o terminal na pasta do projeto e execute o comando abaixo:
     ```bash
-       yarn android
+       expo start
     ``` 
-- Caso o terminal do Metro Bundle não abra, execute também:
+- Abra o emulador ou conecte o celular(É necessário a instalação do Expo Go) e execute:
     ```bash
-        yarn start
+        a
     ```
 - Lembrando que, caso seja executado pelo emulador, o ideal é sempre deixa-lo aberto antes de aplicar os comandos acima.
 ___
 Desenvolvido por :star2: Lucas de Lima Martins de Souza.
-
