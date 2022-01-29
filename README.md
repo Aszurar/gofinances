@@ -27,11 +27,11 @@ O 2º projeto do bootcamp Ignite na trilha react-native, é o 1º projeto com o 
 
 * **Página Inicial**:
   
-  <img src="" width="400"> 
+  <img src="https://i.imgur.com/nT53FGX.jpg" width="300"> 
 
 * **Autenticação com Google**:
 
-  <img src="https://i.imgur.com/cniojdz.gif" width="200">
+  <img src="https://i.imgur.com/cniojdz.gif" width="200"><img src="https://i.imgur.com/ZOB5Vvc.png" width="400">
 
  
 ## :interrobang: Motivo
