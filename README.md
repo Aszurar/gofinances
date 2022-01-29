@@ -29,9 +29,9 @@ O 2º projeto do bootcamp Ignite na trilha react-native, é o 1º projeto com o 
   
   <img src="" width="400"> 
 
-* **Cadastro de gastos**:
+* **Autenticação com Google**:
 
-  <img src="" width="300"><img src="" width="300"><img src="" width="300"> 
+  <img src="https://i.imgur.com/5ieKfYN.gifv" width="300"><img src="" width="300"><img src="" width="300"> 
 
 
  
@@ -40,6 +40,10 @@ O 2º projeto do bootcamp Ignite na trilha react-native, é o 1º projeto com o 
 Esse projeto tem por objetivo por em introduzir os conceitos básicos de React Native no desenvolvimento mobile no 2º capítulo do curso **Ignite** de **React Native**. 
 
 Assim, nesse projeto criamos a lsitagem geral de gastos e faturamentos, além do cadastro e do gráfico sobre a rentabilidade do usuário.
+
+* **Cadastro de gastos**:
+
+  <img src="" width="300"><img src="" width="300"><img src="" width="300"> 
 
 * **Gráfico de gastos**:
 ___
