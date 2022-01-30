@@ -46,7 +46,10 @@ Assim, nesse projeto criamos a lsitagem geral de gastos e faturamentos, além do
 * **Cadastro**:
   
 <div align="center" >
-  <img src="https://i.imgur.com/quNZaaX.gif" width="200">___________________________<img src="" width=250>
+  <img src="https://i.imgur.com/J0ceChO.gif" width="200">________
+  <img src="https://i.imgur.com/Ii1HZU3.png" width=250>__________
+  <img src="https://i.imgur.com/BtZMS1T.gif" width=200>
+  
 </div>
 
 * **Gráfico de gastos**:
