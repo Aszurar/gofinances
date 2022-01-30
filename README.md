@@ -15,9 +15,10 @@ ___
 
 ___
 
-<div align="center" ><img src="" height="500"></div>
+<div align="center" ><img src="https://i.imgur.com/J0ceChO.gif" width="200">
+</div>
 
-- [**Link do vídeo completo sobre o projeto**]()
+- [**Link do vídeo completo sobre o projeto**](https://youtu.be/vM0xW6EMjs0)
 
 ___
 
@@ -49,12 +50,16 @@ Assim, nesse projeto criamos a lsitagem geral de gastos e faturamentos, além do
   <img src="https://i.imgur.com/J0ceChO.gif" width="200">______
   <img src="https://i.imgur.com/Ii1HZU3.png" width=250>_______
   <img src="https://i.imgur.com/BtZMS1T.gif" width=200>
-  
 </div>
 
 * **Gráfico de gastos**:
+<div align="center" >
+  <img src="https://i.imgur.com/Wkd1Ioy.gif" width="200">___________________________<img src="https://i.imgur.com/2GwXzzi.png" width=250>
+</div>
 ___
+
 ## :art: Design
+
 [<h2 align="center">GoFinances - Figma</h2>](https://www.figma.com/file/gB04KGLDsvKN1SmV9Y9JQy/GoFinances-Ignite-(Copy))
 <img src="https://i.imgur.com/JHJCXRe.png" width="870">
 
