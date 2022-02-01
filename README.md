@@ -42,7 +42,7 @@ O 2º projeto do bootcamp Ignite na trilha react-native, é o 1º projeto com o 
 
 Esse projeto tem por objetivo por em introduzir os conceitos básicos de React Native no desenvolvimento mobile no 2º capítulo do curso **Ignite** de **React Native**. 
 
-Assim, nesse projeto criamos a listagem geral de gastos e faturamentos, além do cadastro e do gráfico sobre a rentabilidade do usuário utilizando os conceitos e tecnologias já citadas aqui envolvendo o React Native como o uso e configuração do Expo, Style Components, Flatlist, Contexto, hookes, autenticação, navegação e formulário e por fim armazenamento local por meio do  Async Storage.
+Assim, nesse projeto criamos a listagem geral de gastos e faturamentos, além do cadastro e do gráfico sobre a rentabilidade do usuário utilizando os conceitos e tecnologias já citadas aqui envolvendo o React Native como o uso e configuração do Expo, Style Components, Flatlist, Contexto, hooks, autenticação, navegação e formulário e por fim armazenamento local por meio do  Async Storage.
 
 
 
