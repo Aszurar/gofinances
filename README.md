@@ -82,18 +82,18 @@ ___
 ___
 ## :rocket: Principais Tecnologias Utilizadas 
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias
-- [Yarn](https://classic.yarnpkg.com/blog/2017/05/12/introducing-yarn/)
-- [NodeJS](https://nodejs.org/en/)
-- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Android Studio](https://developer.android.com/studio)
+- [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/usage/)
+- [Autenticação Expo](https://docs.expo.dev/guides/authentication/)
+- [Expo](https://expo.dev/)
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [NodeJS](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)
 - [React-Native](https://reactnative.dev/)
 - [React Navigation](https://reactnavigation.org/)
-- [Expo](https://expo.dev/)
-- [Autenticação Expo](https://docs.expo.dev/guides/authentication/)
-- [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/usage/)
 - [Victory-Native](https://formidable.com/open-source/victory/docs/native/)
+- [Yarn](https://classic.yarnpkg.com/blog/2017/05/12/introducing-yarn/)
 ___
 ## :package: Como baixar e executar o projeto
 
