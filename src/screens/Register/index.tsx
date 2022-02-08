@@ -129,7 +129,6 @@ export function Register({ navigation, route }: RegisterProps) {
             Alert.alert("Dados salvos com sucesso!");
             navigation.navigate('Listagem');
             // handleNavigationToListagem();
-            console.log('deu certo: ', route);
             
         } catch (error) {
             Alert.alert("Não foi possível salvar");
