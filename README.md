@@ -37,7 +37,9 @@ O 2º projeto do bootcamp Ignite na trilha react-native, é o 1º projeto com o 
 <div align="center" >
   <img src="https://i.imgur.com/cniojdz.gif" width="200">___________________________<img src="https://i.imgur.com/ZOB5Vvc.png" width=250>
 </div>
- 
+
+___
+
 ## :interrobang: Motivo
 
 Esse projeto tem por objetivo por em introduzir os conceitos básicos de React Native no desenvolvimento mobile no 2º capítulo do curso **Ignite** de **React Native**. 
@@ -77,6 +79,7 @@ ___
 - Node.js 
 - React
 - React-Native
+- TypeScript
 - Yarn(ou NPM)
 
 ___
@@ -92,6 +95,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [React](https://pt-br.reactjs.org/)
 - [React-Native](https://reactnative.dev/)
 - [React Navigation](https://reactnavigation.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Victory-Native](https://formidable.com/open-source/victory/docs/native/)
 - [Yarn](https://classic.yarnpkg.com/blog/2017/05/12/introducing-yarn/)
 ___
