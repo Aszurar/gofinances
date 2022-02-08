@@ -68,14 +68,16 @@ ___
 ___
 ## :seedling: Requisitos Mínimos
 
-- Node.js 
-- Yarn(ou NPM)
-- React
-- React-Native
 - Android Studio
+- Async-Storage
 - Celular(Opcional)
 - Expo(desktop) 
   - Expo Go(Mobile) opcional.
+- JSON-Server
+- Node.js 
+- React
+- React-Native
+- Yarn(ou NPM)
 
 ___
 ## :rocket: Principais Tecnologias Utilizadas 
