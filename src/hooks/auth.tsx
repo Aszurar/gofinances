@@ -1,9 +1,9 @@
-import React, { 
-    createContext, 
-    ReactNode, 
-    useContext, 
+import React, {
+    createContext,
+    ReactNode,
+    useContext,
     useEffect,
-    useState 
+    useState
 } from "react";
 
 import * as AuthSession from 'expo-auth-session';
@@ -42,27 +42,27 @@ interface AuthorizationResponse {
 const AuthContext = createContext({} as AuthContextProps);
 
 // provider create
-function AuthProvider({ children }: AuthProviderProps){
+function AuthProvider({ children }: AuthProviderProps) {
     const [user, setUser] = useState<userProps>({} as userProps);
-    const [ userStorageLoading, setUserStorageLoading ] = useState(true);
+    const [userStorageLoading, setUserStorageLoading] = useState(true);
     const userStorageKey = '@gofinances:user';
 
 
-    async function signInWithGoogle(){
+    async function signInWithGoogle() {
         try {
             const RESPONSE_TYPE = 'token';
             const SCOPE = encodeURI('profile email');
 
-            const authUrl = 
-            `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
+            const authUrl =
+                `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
 
             const { params, type } = await AuthSession
-            .startAsync({authUrl}) as AuthorizationResponse;
-            
+                .startAsync({ authUrl }) as AuthorizationResponse;
+
             if (type === 'success') {
                 const response = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${params.access_token}`);
                 const userInfo = await response.json();
-                
+
                 const userLogged: userProps = {
                     id: userInfo.id,
                     name: userInfo.given_name,
@@ -76,7 +76,7 @@ function AuthProvider({ children }: AuthProviderProps){
             throw new Error(error as string);
         }
     }
-    async function signInWithApple(){
+    async function signInWithApple() {
         try {
             const credential = await AppleAuthentication.signInAsync({
                 requestedScopes: [
@@ -96,23 +96,23 @@ function AuthProvider({ children }: AuthProviderProps){
                 };
                 setUser(userLogged);
                 await AsyncStorage.setItem(userStorageKey, JSON.stringify(userLogged));
-            }        
-        }catch (error) {
+            }
+        } catch (error) {
             throw new Error(error as string);
         }
     }
-    async function signOut(){
+    async function signOut() {
         setUser({} as userProps);
         await AsyncStorage.removeItem(userStorageKey);
     }
 
-    useEffect (() => {
-        async function loadUserStorageData(){
+    useEffect(() => {
+        async function loadUserStorageData() {
             const userStoraged = await AsyncStorage.getItem(userStorageKey);
-            
-            if(userStoraged) {
-              const userLogged = JSON.parse(userStoraged) as userProps; 
-              setUser(userLogged);
+
+            if (userStoraged) {
+                const userLogged = JSON.parse(userStoraged) as userProps;
+                setUser(userLogged);
             }
             setUserStorageLoading(false);
         }
@@ -120,24 +120,24 @@ function AuthProvider({ children }: AuthProviderProps){
         loadUserStorageData();
     }, [])
 
-    return(
+    return (
         <AuthContext.Provider value={{
-            user, 
-            signInWithGoogle, 
+            user,
+            signInWithGoogle,
             signInWithApple,
             signOut,
             userStorageLoading
-            }}>
+        }}>
             {children}
         </AuthContext.Provider>
     )
 }
 
 // hook create
-function useAuth(){
+function useAuth() {
     const context = useContext(AuthContext);
 
     return context;
 }
 
-export {AuthProvider, useAuth}
+export { AuthProvider, useAuth }

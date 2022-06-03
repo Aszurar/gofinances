@@ -4,18 +4,37 @@ import { Input } from '.';
 import { ThemeProvider } from 'styled-components/native';
 import theme from '../../../global/styles/theme';
 
+
+const Providers: React.FC = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    {children}
+  </ThemeProvider>
+)
+
 describe('Input Component', () => {
   it('should have a specific border color when active property is true', () => {
     const { getByTestId } = render(
-      <ThemeProvider theme={theme}>
-        <Input
-          testID="email-input"
-          placeholder="E-mail"
-          keyboardType="email-address"
-          autoCorrect={false}
-          active={true}
-        />
-      </ThemeProvider>
+      //Método 1
+      <Input
+        testID="email-input"
+        placeholder="E-mail"
+        keyboardType="email-address"
+        autoCorrect={false}
+        active={true}
+      />,
+      {
+        wrapper: Providers
+      }
+      // Método 2
+      // <ThemeProvider theme={theme}>
+      //   <Input
+      //     testID="email-input"
+      //     placeholder="E-mail"
+      //     keyboardType="email-address"
+      //     autoCorrect={false}
+      //     active={true}
+      //   />
+      // </ThemeProvider>
     );
 
     const emailInput = getByTestId('email-input');
