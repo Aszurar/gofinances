@@ -1,8 +1,8 @@
 import fetchMock from 'jest-fetch-mock';
 import { renderHook, act } from '@testing-library/react-hooks';
 import { AuthProvider, useAuth } from "./auth";
-
-import { mocked } from 'ts-jest'
+import { mocked } from 'ts-jest/utils'
+import { startAsync } from 'expo-auth-session';
 
 jest.mock('expo-auth-session');
 
@@ -15,21 +15,18 @@ const userTest = {
   photo: 'any_photo.png',
 };
 
-jest.mock('expo-auth-session', () => {
-  return {
-    startAsync: () => ({
-      type: 'success',
-      params: {
-        access_token: 'any_token',
-      }
-    })
-  }
-})
-
 
 describe("Auth Hook", () => {
   it("should be able to sign in with Google account existing", async () => {
 
+    const googleMocked = mocked(startAsync as any);
+
+    googleMocked.mockResolvedValueOnce({
+      type: 'success',
+      params: {
+        accessToken: 'any_token',
+      }
+    })
 
 
     fetchMock.mockResponseOnce(JSON.stringify(userTest));
@@ -38,21 +35,17 @@ describe("Auth Hook", () => {
       wrapper: AuthProvider
     });
 
-    // console.log("====================")
-    // console.log(result)
-    // console.log("dentro do hook em si")
-    // console.log(result.current)
-
     await act(() => result.current.signInWithGoogle());
 
-    expect(result.current.user).toBeTruthy();
+    expect(result.current.user.email).toBe(userTest.email);
   })
 
   it("user should not connect if cancel authentication with Google", async () => {
 
+    const googleMocked = mocked(startAsync as any);
 
+    googleMocked.mockResolvedValueOnce({ type: 'cancel' })
 
-    fetchMock.mockResponseOnce(JSON.stringify(userTest));
 
     const { result } = renderHook(() => useAuth(), {
       wrapper: AuthProvider
@@ -60,11 +53,7 @@ describe("Auth Hook", () => {
 
     await act(() => result.current.signInWithGoogle());
 
-    expect(result.current.user).toBeTruthy();
-
-    await act(() => result.current.signOut());
-
-    expect(result.current.user).toBeFalsy();
+    expect(result.current.user).not.toHaveProperty('id');
   })
 
 });
