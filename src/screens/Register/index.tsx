@@ -4,29 +4,29 @@ import uuid from 'react-native-uuid';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { 
-    Alert, 
-    Keyboard, 
-    Modal, 
-    TouchableWithoutFeedback 
-    } from 'react-native';
+import {
+    Alert,
+    Keyboard,
+    Modal,
+} from 'react-native';
 import { Button } from '../../components/Form/Button';
 import { CategorySelectButton } from '../../components/Form/CategorySelectButton';
 import { InputForm } from '../../components/Form/InputForm';
 import { TransactionTypeButton } from '../../components/Form/TransactionTypeButton';
 import { CategorySelect } from '../CategorySelect';
-import { 
-    Container, 
-    Fields, 
-    Form, 
-    Header, 
-    Title, 
-    TypeTransactionContainer 
+import {
+    Container,
+    Fields,
+    Form,
+    Header,
+    Title,
+    TypeTransactionContainer
 } from './styles';
 // import { CommonActions, useNavigation } from '@react-navigation/native';
 import { useAuth } from '../../hooks/auth';
 
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { GestureHandlerRootView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 type RootBottomTabParamList = {
     Listagem: undefined;
@@ -41,7 +41,7 @@ type RegisterProps = {
 
 interface FormData {
     name: string;
-    amount: number;    
+    amount: number;
 }
 
 const schema = Yup.object().shape({
@@ -55,7 +55,7 @@ const schema = Yup.object().shape({
 });
 
 export function Register({ navigation, route }: RegisterProps) {
-    const [transactionType, settransactionType] = useState(''); 
+    const [transactionType, settransactionType] = useState('');
     const [categoryModal, setCategoryModal] = useState(false);
     const [category, setCategory] = useState({
         key: 'category',
@@ -82,22 +82,22 @@ export function Register({ navigation, route }: RegisterProps) {
     function handleSelectTransactionType(type: 'up' | 'down') {
         settransactionType(type);
     }
-    
+
     function handleCategoryModalOpen() {
         setCategoryModal(true);
     }
-    
-    function handleCategoryModalClose(){
+
+    function handleCategoryModalClose() {
         setCategoryModal(false);
     }
-    
-    async function handleSubmitForm(form: FormData){
+
+    async function handleSubmitForm(form: FormData) {
         const dataKey = `@gonfinances:transactions_user:${user.id}`;
-        
+
         if (!transactionType) {
             return Alert.alert('Por favor, selecione o tipo de transação.')
         }
-        if (category.key === 'category') {     
+        if (category.key === 'category') {
             return Alert.alert('Por favor, selecione o tipo de categoria.')
         }
         const data = {
@@ -108,7 +108,7 @@ export function Register({ navigation, route }: RegisterProps) {
             category: category.key,
             date: new Date()
         }
-        
+
         try {
             const oldData = await AsyncStorage.getItem(dataKey);
             const oldDataFormatted = oldData ? JSON.parse(oldData) : [];
@@ -116,91 +116,99 @@ export function Register({ navigation, route }: RegisterProps) {
                 ...oldDataFormatted,
                 data
             ]
-            
+
             await AsyncStorage.setItem(dataKey, JSON.stringify(newData));
-            
+
             reset();
-            settransactionType(''); 
+            settransactionType('');
             setCategory({
                 key: 'category',
                 name: 'Categoria',
             });
-            
+
             Alert.alert("Dados salvos com sucesso!");
             navigation.navigate('Listagem');
             // handleNavigationToListagem();
-            
+
         } catch (error) {
             Alert.alert("Não foi possível salvar");
         }
     }
-return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <Container>            
-                <Header>
-                    <Title>Cadastro</Title>
-                </Header>
-                
-                <Form> 
-                    <Fields> 
-                        <InputForm 
-                            name="name"
-                            control={control}
-                            placeholder="Nome"
-                            autoCapitalize="sentences"
-                            autoCorrect={false} 
-                            autoFocus={true}
-                            returnKeyType="next"   
-                            error={errors.name && errors.name.message}                     
-                            />
-                        <InputForm
-                            name="amount"
-                            control={control}
-                            placeholder="Preço" 
-                            autoCapitalize="none"
-                            autoCorrect={false} 
-                            keyboardType="numeric"
-                            returnKeyType="next"
-                            error={errors.amount && errors.amount.message}                     
+    return (
+        // <TouchableWithoutFeedback style={{ flex: 1 }} containerStyle={{ flex: 1 }} onPress={Keyboard.dismiss}>
+        <Container>
+            <Header>
+                <Title>Cadastro</Title>
+            </Header>
 
-                            />
+            <Form>
+                <Fields>
+                    <InputForm
+                        name="name"
+                        control={control}
+                        placeholder="Nome"
+                        autoCapitalize="sentences"
+                        autoCorrect={false}
+                        autoFocus={true}
+                        returnKeyType="next"
+                        error={errors.name && errors.name.message}
+                    />
+                    <InputForm
+                        name="amount"
+                        control={control}
+                        placeholder="Preço"
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        keyboardType="numeric"
+                        returnKeyType="next"
+                        error={errors.amount && errors.amount.message}
 
-                        <TypeTransactionContainer> 
-                            <TransactionTypeButton 
-                                type="up" 
+                    />
+
+                    <TypeTransactionContainer>
+                        <GestureHandlerRootView style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <TransactionTypeButton
+                                type="up"
                                 text="income"
-                                onPress={() => handleSelectTransactionType('up')}    
+                                onPress={() => handleSelectTransactionType('up')}
                                 isActive={transactionType === 'up'}
-                                />
-                            <TransactionTypeButton 
-                                type="down" 
-                                text="outcome"
-                                onPress={() => handleSelectTransactionType('down')}    
-                                isActive={transactionType === 'down'}
-                                />
-                        </TypeTransactionContainer>
+                            />
 
-                        <CategorySelectButton  
+                            <TransactionTypeButton
+                                type="down"
+                                text="outcome"
+                                onPress={() => handleSelectTransactionType('down')}
+                                isActive={transactionType === 'down'}
+                            />
+                        </GestureHandlerRootView>
+                    </TypeTransactionContainer>
+
+                    <GestureHandlerRootView >
+                        <CategorySelectButton
                             text={category.name}
                             onPress={handleCategoryModalOpen}
-                            />
+                        />
+                    </GestureHandlerRootView>
 
-                    </Fields>
+                </Fields>
 
+                <GestureHandlerRootView >
                     <Button text="Enviar"
                         onPress={handleSubmit(handleSubmitForm)}
-                        />
-                </Form>
+                    />
+                </GestureHandlerRootView >
 
-                <Modal visible={categoryModal}>
-                    <CategorySelect
-                        category={category}
-                        setCategory={setCategory}
-                        closeSelectCategory={handleCategoryModalClose} 
-                        />
-                </Modal>
-            </Container>
-        </TouchableWithoutFeedback>
+            </Form>
+
+            <Modal visible={categoryModal}>
+                <CategorySelect
+                    category={category}
+                    setCategory={setCategory}
+                    closeSelectCategory={handleCategoryModalClose}
+                />
+            </Modal>
+        </Container>
+        // </TouchableWithoutFeedback>
     )
-        
+
 }

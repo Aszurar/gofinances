@@ -14,14 +14,14 @@ interface ContainerProps extends IconProps {
 
 // ex
 export const Container = styled.View<ContainerProps>`
-    /* background-color: ${ ({ isActive, type, theme }) => isActive ? 
-    ( type === 'up' ? theme.colors.success_light : theme.colors.attention_light) : theme.colors.background}; */
-    ${ ({ isActive, type, theme}) => isActive && type === 'up' && css`background-color: ${theme.colors.success_light}`}
-    ${ ({ isActive, type, theme}) => isActive && type === 'down' && css`background-color: ${theme.colors.attention_light}`}
+    /* background-color: ${({ isActive, type, theme }) => isActive ?
+        (type === 'up' ? theme.colors.success_light : theme.colors.attention_light) : theme.colors.background}; */
+    ${({ isActive, type, theme }) => isActive && type === 'up' && css`background-color: ${theme.colors.success_light}`}
+    ${({ isActive, type, theme }) => isActive && type === 'down' && css`background-color: ${theme.colors.attention_light}`}
     
     width: 48%;
-    
-    border: ${({ isActive }) => isActive ? 0 : 1.5 }px solid ${({ theme }) => theme.colors.border};
+
+    border: ${({ isActive }) => isActive ? 0 : 1.5}px solid ${({ theme }) => theme.colors.border};
     border-radius: 5px;
 `;
 
@@ -41,7 +41,7 @@ export const Title = styled.Text`
     color: ${({ theme }) => theme.colors.title};
 `;
 
-export const Icon = styled(EvilIcons)<IconProps>`
+export const Icon = styled(EvilIcons) <IconProps>`
     font-size: ${RFValue(24)}px;
 
     color: ${({ theme, type }) => type === 'up' ? theme.colors.success : theme.colors.attention};

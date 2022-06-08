@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import React, { useCallback, useEffect, useState } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { HighlightCard } from '../../components/HighlightCard'
 import { LoadingStyle } from '../../components/LoadingStyle';
 import { TransactionCard, DataProps } from '../../components/TransactionCard';
@@ -32,7 +33,7 @@ interface HighlightCardProps {
     expensive: HighlightCardElementProps;
     total: HighlightCardElementProps;
 }
-export interface DataTransactionCardProps extends DataProps{
+export interface DataTransactionCardProps extends DataProps {
     id: string;
 }
 
@@ -42,150 +43,150 @@ export function Dashboard() {
     const [isLoading, setIsLoading] = useState(true);
     const { signOut, user } = useAuth();
     const dataKey = `@gonfinances:transactions_user:${user.id}`;
-    
-    function getLastTransactionDate(
-        transactions: DataTransactionCardProps[], 
-        type: 'up' | 'down'
-        ){
-        
-        const transactionsFiltered = transactions
-        .filter(transaction => transaction.type === type);
 
-        if(transactionsFiltered.length === 0){
+    function getLastTransactionDate(
+        transactions: DataTransactionCardProps[],
+        type: 'up' | 'down'
+    ) {
+
+        const transactionsFiltered = transactions
+            .filter(transaction => transaction.type === type);
+
+        if (transactionsFiltered.length === 0) {
             return 0;
         }
-            
+
         const lastTransactionDate = new Date(Math.max
-        .apply(Math, transactionsFiltered
-        .map(transaction => new Date(transaction.date).getTime())));
-        
+            .apply(Math, transactionsFiltered
+                .map(transaction => new Date(transaction.date).getTime())));
+
         const lastTransactionDateMonth = lastTransactionDate
-        .toLocaleString('pt-BR', {
-            month: 'long',
-        })
+            .toLocaleString('pt-BR', {
+                month: 'long',
+            })
         const lastTransactionDateDay = lastTransactionDate.getDate();
 
         return `dia ${lastTransactionDateDay} de ${lastTransactionDateMonth}`;
     }
 
     async function loadData() {
-        
+
         let expensiveSum = 0;
         let depositSum = 0;
         const response = await AsyncStorage.getItem(dataKey);
-        
+
         const transactions: DataTransactionCardProps[] = response ? JSON.parse(response) : [];
 
         //rescue the last transactions date
         const lastTransactionDepositDate = getLastTransactionDate(transactions, 'up');
         const lastTransactionExpensiveDate = getLastTransactionDate(transactions, 'down');
         const lastTransactionTotalDate = lastTransactionExpensiveDate === 0 ?
-        'Não há transações':
-        `01 à ${lastTransactionExpensiveDate}`;
-        
-        const transactionsFormatted: DataTransactionCardProps[] = 
-        transactions.map((transaction: DataTransactionCardProps) => {
-            if (transaction.type === 'up') {
-                depositSum = depositSum + Number(transaction.amount);
-            } else {
-                expensiveSum = expensiveSum + Number(transaction.amount);    
-            }
+            'Não há transações' :
+            `01 à ${lastTransactionExpensiveDate}`;
 
-            const amount = Number(transaction.amount)
-            .toLocaleString('pt-BR',
-            {
-                style: 'currency',
-                currency: 'BRL'
-            }
-            );
+        const transactionsFormatted: DataTransactionCardProps[] =
+            transactions.map((transaction: DataTransactionCardProps) => {
+                if (transaction.type === 'up') {
+                    depositSum = depositSum + Number(transaction.amount);
+                } else {
+                    expensiveSum = expensiveSum + Number(transaction.amount);
+                }
 
-   
-            
-            const date = Intl.DateTimeFormat('pt-BR', {
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric",
-            }).format(new Date(transaction.date));
-            
-            return {
-                id: transaction.id,
-                type: transaction.type,
-                name: transaction.name,
-                date,
-                amount: amount,
-                category: transaction.category,
-            }
-            
-        });
+                const amount = Number(transaction.amount)
+                    .toLocaleString('pt-BR',
+                        {
+                            style: 'currency',
+                            currency: 'BRL'
+                        }
+                    );
 
-        
+
+
+                const date = Intl.DateTimeFormat('pt-BR', {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                }).format(new Date(transaction.date));
+
+                return {
+                    id: transaction.id,
+                    type: transaction.type,
+                    name: transaction.name,
+                    date,
+                    amount: amount,
+                    category: transaction.category,
+                }
+
+            });
+
+
         setData(transactionsFormatted);
 
         const depositSumFormatted = Number(depositSum)
-        .toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-        })
-        
+            .toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            })
+
         const expensiveSumFormatted = Number(expensiveSum)
-        .toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-        })
-        
+            .toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            })
+
         let totalAmount = depositSum - expensiveSum;
 
         const totalAmountFormatted = Number(totalAmount)
-        .toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-        });
+            .toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            });
 
         setHiLightCardsData(
             {
-               deposit: {
+                deposit: {
                     amount: depositSumFormatted,
-                    lastTransactionDate: lastTransactionDepositDate === 0 ? 
-                    'Não há transações' :
-                    `Última entrada ${lastTransactionDepositDate}`,
-               },
-               expensive: {
+                    lastTransactionDate: lastTransactionDepositDate === 0 ?
+                        'Não há transações' :
+                        `Última entrada ${lastTransactionDepositDate}`,
+                },
+                expensive: {
                     amount: expensiveSumFormatted,
-                    lastTransactionDate: lastTransactionExpensiveDate === 0 ? 
-                    'Não há transações' :
-                    `Última saída ${lastTransactionExpensiveDate}`,
-               },
-               total: {
+                    lastTransactionDate: lastTransactionExpensiveDate === 0 ?
+                        'Não há transações' :
+                        `Última saída ${lastTransactionExpensiveDate}`,
+                },
+                total: {
                     amount: totalAmountFormatted,
                     lastTransactionDate: lastTransactionTotalDate,
-               }
+                }
             });
 
         setIsLoading(false);
     }
-    async function removeAll(){
+    async function removeAll() {
         await AsyncStorage.removeItem(dataKey);
     }
     useEffect(() => {
         // removeAll();
         loadData();
-                
+
 
     }, [])
 
     useFocusEffect(useCallback(() => {
         loadData();
-    }, 
-    []));
+    },
+        []));
 
     return (
         <Container>
-            { isLoading ? 
+            {isLoading ?
                 <LoadingStyle />
-            :
+                :
                 <>
                     <Header>
-                        <Head>
+                        <Head style={{ justifyContent: "space-between" }}>
                             <UserInfo>
                                 <Photo source={{ uri: user.photo }} />
 
@@ -195,33 +196,34 @@ export function Dashboard() {
                                 </User>
 
                             </UserInfo>
-
-                            <LogoutIconButton
-                                onPress={signOut}
-                            >
-                                <PowerIcon name="power" />
-                            </LogoutIconButton>
+                            <GestureHandlerRootView>
+                                <LogoutIconButton
+                                    onPress={signOut}
+                                >
+                                    <PowerIcon name="power" />
+                                </LogoutIconButton>
+                            </GestureHandlerRootView>
                         </Head>
                     </Header>
                     <HighlightCards>
-                        <HighlightCard type="up" title="Entradas" amount={highLightCardsData.deposit.amount} lastTransaction={highLightCardsData.deposit.lastTransactionDate}/>
-                        <HighlightCard type="down" title="Saídas" amount={highLightCardsData.expensive.amount} lastTransaction={highLightCardsData.expensive.lastTransactionDate}/>
+                        <HighlightCard type="up" title="Entradas" amount={highLightCardsData.deposit.amount} lastTransaction={highLightCardsData.deposit.lastTransactionDate} />
+                        <HighlightCard type="down" title="Saídas" amount={highLightCardsData.expensive.amount} lastTransaction={highLightCardsData.expensive.lastTransactionDate} />
                         <HighlightCard type="total" title="Total" amount={highLightCardsData.total.amount} lastTransaction={highLightCardsData.total.lastTransactionDate} />
                     </HighlightCards>
 
                     <Transaction>
                         <TitleTransaction>Listagem</TitleTransaction>
 
-                        <ListTransaction 
+                        <ListTransaction
                             data={data}
                             keyExtractor={item => item.id}
-                            renderItem={ 
-                                ({ item }) => <TransactionCard data={ item }/> 
+                            renderItem={
+                                ({ item }) => <TransactionCard data={item} />
                             }
                         />
                     </Transaction>
                 </>
-            } 
-        </Container>
+            }
+        </Container >
     )
 }

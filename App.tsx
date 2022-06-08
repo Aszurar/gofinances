@@ -6,7 +6,7 @@ import { StatusBar } from 'react-native'
 import { ThemeProvider } from 'styled-components/native';
 import AppLoading from 'expo-app-loading';
 
-import { 
+import {
   useFonts,
   Poppins_400Regular,
   Poppins_500Medium,
@@ -20,7 +20,7 @@ import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Poppins_400Regular, 
+    Poppins_400Regular,
     Poppins_500Medium,
     Poppins_700Bold
   });
@@ -30,12 +30,12 @@ export default function App() {
   if (!fontsLoaded || userStorageLoading) {
     return <AppLoading />
   }
-  return(
+  return (
     <ThemeProvider theme={theme}>
-      <StatusBar barStyle={'light-content'} backgroundColor={'#5636D3'}/>
-        <AuthProvider>
-          <Routes />  
-        </AuthProvider>
+      <StatusBar barStyle={'light-content'} backgroundColor={'#5636D3'} />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   )
 }

@@ -3,11 +3,27 @@
   "displayName": "gofinances",
   "expo": {
     "name": "gofinances",
+    "icon": "./assets/logo.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#5636D3"
+    },
     "slug": "gofinances",
     "scheme": "gofinances",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.gofinances",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.gofinances",
+      "versionCode": 1
+    },
+    "description": "- The gofinances project is a mobile application to register  expenses and billings received, in addition to performing a basic of user expenses and a summary.\n- O projeto gofinances é um aplicativo mobile para cadastrar gastos e faturamentos recebidos além de realizar uma análise básica sobre os gastos do usuário e um resumo.",
+    "githubUrl": "https://github.com/Aszurar/gofinances"
   }
 }
