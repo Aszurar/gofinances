@@ -54,6 +54,12 @@
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
+        </template>
     </div>
     <div class='status-line low'></div>
     <pre><table class="coverage">
@@ -283,7 +289,9 @@
 <a name='L224'></a><a href='#L224'>224</a>
 <a name='L225'></a><a href='#L225'>225</a>
 <a name='L226'></a><a href='#L226'>226</a>
-<a name='L227'></a><a href='#L227'>227</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -303,6 +311,131 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -323,130 +456,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -464,6 +473,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -512,6 +522,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import React, { useCallback, useEffect, useState } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { HighlightCard } from '../../components/HighlightCard'
 import { LoadingStyle } from '../../components/LoadingStyle';
 import { TransactionCard, DataProps } from '../../components/TransactionCard';
@@ -543,7 +554,7 @@ interface HighlightCardProps {
     expensive: HighlightCardElementProps;
     total: HighlightCardElementProps;
 }
-export interface DataTransactionCardProps extends DataProps{
+export interface DataTransactionCardProps extends DataProps {
     id: string;
 }
 &nbsp;
@@ -553,150 +564,150 @@ export function <span class="fstat-no" title="function not covered" >Dashboard(<
     const [isLoading, setIsLoading] = <span class="cstat-no" title="statement not covered" >useState(true);</span>
     const { signOut, user } = <span class="cstat-no" title="statement not covered" >useAuth();</span>
     const dataKey = <span class="cstat-no" title="statement not covered" >`@gonfinances:transactions_user:${user.id}`;</span>
-    
-    function <span class="fstat-no" title="function not covered" >getLastTransactionDate(</span>
-        transactions: DataTransactionCardProps[], 
-        type: 'up' | 'down'
-        ){
-        
-        const transactionsFiltered = <span class="cstat-no" title="statement not covered" >transactions</span>
-        .filter(<span class="fstat-no" title="function not covered" >tr</span>ansaction =&gt; <span class="cstat-no" title="statement not covered" >transaction.type === type)</span>;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if(transactionsFiltered.length === 0){</span>
+    function <span class="fstat-no" title="function not covered" >getLastTransactionDate(</span>
+        transactions: DataTransactionCardProps[],
+        type: 'up' | 'down'
+    ) {
+&nbsp;
+        const transactionsFiltered = <span class="cstat-no" title="statement not covered" >transactions</span>
+            .filter(<span class="fstat-no" title="function not covered" >tr</span>ansaction =&gt; <span class="cstat-no" title="statement not covered" >transaction.type === type)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (transactionsFiltered.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >            return 0;</span>
         }
-            
+&nbsp;
         const lastTransactionDate = <span class="cstat-no" title="statement not covered" >new Date(Math.max</span>
-        .apply(Math, transactionsFiltered
-        .map(<span class="fstat-no" title="function not covered" >tr</span>ansaction =&gt; <span class="cstat-no" title="statement not covered" >new Date(transaction.date).getTime())</span>));
-        
+            .apply(Math, transactionsFiltered
+                .map(<span class="fstat-no" title="function not covered" >tr</span>ansaction =&gt; <span class="cstat-no" title="statement not covered" >new Date(transaction.date).getTime())</span>));
+&nbsp;
         const lastTransactionDateMonth = <span class="cstat-no" title="statement not covered" >lastTransactionDate</span>
-        .toLocaleString('pt-BR', {
-            month: 'long',
-        })
+            .toLocaleString('pt-BR', {
+                month: 'long',
+            })
         const lastTransactionDateDay = <span class="cstat-no" title="statement not covered" >lastTransactionDate.getDate();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        return `dia ${lastTransactionDateDay} de ${lastTransactionDateMonth}`;</span>
     }
 &nbsp;
     async function <span class="fstat-no" title="function not covered" >loadData(</span>) {
-        
+&nbsp;
         let expensiveSum = <span class="cstat-no" title="statement not covered" >0;</span>
         let depositSum = <span class="cstat-no" title="statement not covered" >0;</span>
         const response = <span class="cstat-no" title="statement not covered" >await AsyncStorage.getItem(dataKey);</span>
-        
+&nbsp;
         const transactions: DataTransactionCardProps[] = <span class="cstat-no" title="statement not covered" >response ? JSON.parse(response) : [];</span>
 &nbsp;
         //rescue the last transactions date
         const lastTransactionDepositDate = <span class="cstat-no" title="statement not covered" >getLastTransactionDate(transactions, 'up');</span>
         const lastTransactionExpensiveDate = <span class="cstat-no" title="statement not covered" >getLastTransactionDate(transactions, 'down');</span>
         const lastTransactionTotalDate = <span class="cstat-no" title="statement not covered" >lastTransactionExpensiveDate === 0 ?</span>
-        'Não há transações':
-        `01 à ${lastTransactionExpensiveDate}`;
-        
-        const transactionsFormatted: DataTransactionCardProps[] = 
-<span class="cstat-no" title="statement not covered" >        transactions.map(<span class="fstat-no" title="function not covered" >(t</span>ransaction: DataTransactionCardProps) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            if (transaction.type === 'up') {</span>
-<span class="cstat-no" title="statement not covered" >                depositSum = depositSum + Number(transaction.amount);</span>
-            } else {
-<span class="cstat-no" title="statement not covered" >                expensiveSum = expensiveSum + Number(transaction.amount);    </span>
-            }
+            'Não há transações' :
+            `01 à ${lastTransactionExpensiveDate}`;
 &nbsp;
-            const amount = <span class="cstat-no" title="statement not covered" >Number(transaction.amount)</span>
-            .toLocaleString('pt-BR',
-            {
-                style: 'currency',
-                currency: 'BRL'
-            }
-            );
+        const transactionsFormatted: DataTransactionCardProps[] =
+<span class="cstat-no" title="statement not covered" >            transactions.map(<span class="fstat-no" title="function not covered" >(t</span>ransaction: DataTransactionCardProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (transaction.type === 'up') {</span>
+<span class="cstat-no" title="statement not covered" >                    depositSum = depositSum + Number(transaction.amount);</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    expensiveSum = expensiveSum + Number(transaction.amount);</span>
+                }
 &nbsp;
-   
-            
-            const date = <span class="cstat-no" title="statement not covered" >Intl.DateTimeFormat('pt-BR', {</span>
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric",
-            }).format(new Date(transaction.date));
-            
-<span class="cstat-no" title="statement not covered" >            return {</span>
-                id: transaction.id,
-                type: transaction.type,
-                name: transaction.name,
-                date,
-                amount: amount,
-                category: transaction.category,
-            }
-            
-        });
+                const amount = <span class="cstat-no" title="statement not covered" >Number(transaction.amount)</span>
+                    .toLocaleString('pt-BR',
+                        {
+                            style: 'currency',
+                            currency: 'BRL'
+                        }
+                    );
 &nbsp;
-        
+&nbsp;
+&nbsp;
+                const date = <span class="cstat-no" title="statement not covered" >Intl.DateTimeFormat('pt-BR', {</span>
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                }).format(new Date(transaction.date));
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return {</span>
+                    id: transaction.id,
+                    type: transaction.type,
+                    name: transaction.name,
+                    date,
+                    amount: amount,
+                    category: transaction.category,
+                }
+&nbsp;
+            });
+&nbsp;
+&nbsp;
 <span class="cstat-no" title="statement not covered" >        setData(transactionsFormatted);</span>
 &nbsp;
         const depositSumFormatted = <span class="cstat-no" title="statement not covered" >Number(depositSum)</span>
-        .toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-        })
-        
+            .toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            })
+&nbsp;
         const expensiveSumFormatted = <span class="cstat-no" title="statement not covered" >Number(expensiveSum)</span>
-        .toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-        })
-        
+            .toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            })
+&nbsp;
         let totalAmount = <span class="cstat-no" title="statement not covered" >depositSum - expensiveSum;</span>
 &nbsp;
         const totalAmountFormatted = <span class="cstat-no" title="statement not covered" >Number(totalAmount)</span>
-        .toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-        });
+            .toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        setHiLightCardsData(</span>
             {
-               deposit: {
+                deposit: {
                     amount: depositSumFormatted,
-                    lastTransactionDate: lastTransactionDepositDate === 0 ? 
-                    'Não há transações' :
-                    `Última entrada ${lastTransactionDepositDate}`,
-               },
-               expensive: {
+                    lastTransactionDate: lastTransactionDepositDate === 0 ?
+                        'Não há transações' :
+                        `Última entrada ${lastTransactionDepositDate}`,
+                },
+                expensive: {
                     amount: expensiveSumFormatted,
-                    lastTransactionDate: lastTransactionExpensiveDate === 0 ? 
-                    'Não há transações' :
-                    `Última saída ${lastTransactionExpensiveDate}`,
-               },
-               total: {
+                    lastTransactionDate: lastTransactionExpensiveDate === 0 ?
+                        'Não há transações' :
+                        `Última saída ${lastTransactionExpensiveDate}`,
+                },
+                total: {
                     amount: totalAmountFormatted,
                     lastTransactionDate: lastTransactionTotalDate,
-               }
+                }
             });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        setIsLoading(false);</span>
     }
-    async function <span class="fstat-no" title="function not covered" >removeAll(</span>){
+    async function <span class="fstat-no" title="function not covered" >removeAll(</span>) {
 <span class="cstat-no" title="statement not covered" >        await AsyncStorage.removeItem(dataKey);</span>
     }
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
         // removeAll();
 <span class="cstat-no" title="statement not covered" >        loadData();</span>
-                
+&nbsp;
 &nbsp;
     }, [])
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    useFocusEffect(useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        loadData();</span>
-    }, 
-    []));
+    },
+        []));
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return (</span>
         &lt;Container&gt;
-            { isLoading ? 
+            {isLoading ?
                 &lt;LoadingStyle /&gt;
-            :
+                :
                 &lt;&gt;
                     &lt;Header&gt;
-                        &lt;Head&gt;
+                        &lt;Head style={{ justifyContent: "space-between" }}&gt;
                             &lt;UserInfo&gt;
                                 &lt;Photo source={{ uri: user.photo }} /&gt;
 &nbsp;
@@ -706,34 +717,35 @@ export function <span class="fstat-no" title="function not covered" >Dashboard(<
                                 &lt;/User&gt;
 &nbsp;
                             &lt;/UserInfo&gt;
-&nbsp;
-                            &lt;LogoutIconButton
-                                onPress={signOut}
-                            &gt;
-                                &lt;PowerIcon name="power" /&gt;
-                            &lt;/LogoutIconButton&gt;
+                            &lt;GestureHandlerRootView&gt;
+                                &lt;LogoutIconButton
+                                    onPress={signOut}
+                                &gt;
+                                    &lt;PowerIcon name="power" /&gt;
+                                &lt;/LogoutIconButton&gt;
+                            &lt;/GestureHandlerRootView&gt;
                         &lt;/Head&gt;
                     &lt;/Header&gt;
                     &lt;HighlightCards&gt;
-                        &lt;HighlightCard type="up" title="Entradas" amount={highLightCardsData.deposit.amount} lastTransaction={highLightCardsData.deposit.lastTransactionDate}/&gt;
-                        &lt;HighlightCard type="down" title="Saídas" amount={highLightCardsData.expensive.amount} lastTransaction={highLightCardsData.expensive.lastTransactionDate}/&gt;
+                        &lt;HighlightCard type="up" title="Entradas" amount={highLightCardsData.deposit.amount} lastTransaction={highLightCardsData.deposit.lastTransactionDate} /&gt;
+                        &lt;HighlightCard type="down" title="Saídas" amount={highLightCardsData.expensive.amount} lastTransaction={highLightCardsData.expensive.lastTransactionDate} /&gt;
                         &lt;HighlightCard type="total" title="Total" amount={highLightCardsData.total.amount} lastTransaction={highLightCardsData.total.lastTransactionDate} /&gt;
                     &lt;/HighlightCards&gt;
 &nbsp;
                     &lt;Transaction&gt;
                         &lt;TitleTransaction&gt;Listagem&lt;/TitleTransaction&gt;
 &nbsp;
-                        &lt;ListTransaction 
+                        &lt;ListTransaction
                             data={data}
                             keyExtractor={<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item.id}</span>
-                            renderItem={ 
-<span class="fstat-no" title="function not covered" >                                ({</span> item }) =&gt; <span class="cstat-no" title="statement not covered" >&lt;TransactionCard data={ item }/&gt; </span>
+                            renderItem={
+<span class="fstat-no" title="function not covered" >                                ({</span> item }) =&gt; <span class="cstat-no" title="statement not covered" >&lt;TransactionCard data={item} /&gt;</span>
                             }
                         /&gt;
                     &lt;/Transaction&gt;
                 &lt;/&gt;
-            } 
-        &lt;/Container&gt;
+            }
+        &lt;/Container &gt;
     )
 }</pre></td></tr></table></pre>
 
@@ -741,10 +753,9 @@ export function <span class="fstat-no" title="function not covered" >Dashboard(<
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Jun 05 2022 02:44:57 GMT-0300 (Horário Padrão de Brasília)
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at Sun Jun 12 2022 17:04:28 GMT-0300 (Horário Padrão de Brasília)
             </div>
-        </div>
         <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {

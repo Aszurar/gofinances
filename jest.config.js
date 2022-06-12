@@ -11,7 +11,7 @@ module.exports = {
     '@testing-library/jest-native/extend-expect', 
     'jest-styled-components'
   ],
-
+  setupFiles: ["./setupFile.js"],
   collectCoverage: true,
   collectCoverageFrom: [
     "src/**/*.tsx", 

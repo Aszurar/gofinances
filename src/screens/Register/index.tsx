@@ -8,6 +8,7 @@ import {
     Alert,
     Keyboard,
     Modal,
+    View,
 } from 'react-native';
 import { Button } from '../../components/Form/Button';
 import { CategorySelectButton } from '../../components/Form/CategorySelectButton';
@@ -22,22 +23,22 @@ import {
     Title,
     TypeTransactionContainer
 } from './styles';
-// import { CommonActions, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { useAuth } from '../../hooks/auth';
 
-import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { GestureHandlerRootView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+// import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-type RootBottomTabParamList = {
-    Listagem: undefined;
-}
+// type RootBottomTabParamList = {
+//     Listagem: undefined;
+// }
 
-type RegisterScreenNavigationProp = BottomTabNavigationProp<RootBottomTabParamList, 'Listagem'>;
+// type RegisterScreenNavigationProp = BottomTabNavigationProp<RootBottomTabParamList, 'Listagem'>;
 
-type RegisterProps = {
-    navigation: RegisterScreenNavigationProp;
-    route: RegisterScreenNavigationProp;
-}
+// type RegisterProps = {
+//     navigation: RegisterScreenNavigationProp;
+//     route: RegisterScreenNavigationProp;
+// }
 
 interface FormData {
     name: string;
@@ -54,7 +55,7 @@ const schema = Yup.object().shape({
         .required('O valor da transação é obrigatório')
 });
 
-export function Register({ navigation, route }: RegisterProps) {
+export function Register() {
     const [transactionType, settransactionType] = useState('');
     const [categoryModal, setCategoryModal] = useState(false);
     const [category, setCategory] = useState({
@@ -69,7 +70,7 @@ export function Register({ navigation, route }: RegisterProps) {
     } = useForm({
         resolver: yupResolver(schema)
     });
-    // const navigation = useNavigation();
+    const navigation = useNavigation<any>();
     const { user } = useAuth();
     // function handleNavigationToListagem(){
     //     navigation.dispatch(
@@ -153,6 +154,7 @@ export function Register({ navigation, route }: RegisterProps) {
                         returnKeyType="next"
                         error={errors.name && errors.name.message}
                     />
+                    <View style={{ height: 8 }} />
                     <InputForm
                         name="amount"
                         control={control}
@@ -185,6 +187,7 @@ export function Register({ navigation, route }: RegisterProps) {
 
                     <GestureHandlerRootView >
                         <CategorySelectButton
+                            testID='category-button'
                             text={category.name}
                             onPress={handleCategoryModalOpen}
                         />
@@ -200,7 +203,7 @@ export function Register({ navigation, route }: RegisterProps) {
 
             </Form>
 
-            <Modal visible={categoryModal}>
+            <Modal testID='modal-category' visible={categoryModal}>
                 <CategorySelect
                     category={category}
                     setCategory={setCategory}

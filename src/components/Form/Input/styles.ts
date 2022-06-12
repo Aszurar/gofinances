@@ -6,7 +6,7 @@ interface Props {
   active: boolean;
 }
 
-export const Container = styled(TextInput)<Props>`
+export const Container = styled(TextInput) <Props>`
   background-color: ${({ theme }) => theme.colors.shape};
   color: ${({ theme }) => theme.colors.title};
 

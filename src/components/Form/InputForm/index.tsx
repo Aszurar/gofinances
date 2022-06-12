@@ -5,25 +5,25 @@ import { Input } from '../Input';
 import { Container, Error } from './styles';
 
 interface InputFormProps extends TextInputProps {
-    control: Control ;
+    control: Control;
     name: string;
     error: string;
 }
 
-export function InputForm({ name, control, error,...rest }: InputFormProps){
-    return(
+export function InputForm({ name, control, error, ...rest }: InputFormProps) {
+    return (
         <Container>
             <Controller
                 control={control}
-                render={({ field: {onChange, value}}) => (
-                  <Input 
-                    onChangeText={onChange}
-                    value={value}
-                    {...rest}
-                  />   
+                render={({ field: { onChange, value } }) => (
+                    <Input
+                        onChangeText={onChange}
+                        value={value}
+                        {...rest}
+                    />
                 )}
-                 name={name}   
-                />
+                name={name}
+            />
             {error && <Error>{error}</Error>}
         </Container>
     )
